@@ -36,3 +36,28 @@ const readMoreButtons = document.querySelectorAll('.read-more-button');
 readMoreButtons.forEach(button => {
     button.addEventListener('click', toggleContent);
 });
+
+function filtrarConteudo() {
+    const tipoConteudoSelecionado = document.getElementById("content-type").value;
+    const termoPesquisa = document.getElementById("search-input").value.toLowerCase();
+
+    const conteudoItems = document.querySelectorAll(".content-item");
+    conteudoItems.forEach(item => {
+        const tipoConteudo = item.getAttribute("data-tipo").toLowerCase();
+        const textoConteudo = item.textContent.toLowerCase();
+
+        const correspondeAoTipo = tipoConteudoSelecionado === "all" || tipoConteudo === tipoConteudoSelecionado;
+        const correspondeAoTermo = termoPesquisa === "" || textoConteudo.includes(termoPesquisa);
+
+        if (correspondeAoTipo && correspondeAoTermo) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+const searchButton = document.getElementById("search-button");
+if (searchButton) {
+    searchButton.addEventListener("click", filtrarConteudo);
+}
