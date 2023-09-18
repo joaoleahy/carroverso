@@ -20,14 +20,26 @@
     </header>
 
     <main>
+        <!-- Barra de pesquisa avançada por tipo de conteúdo -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Digite sua pesquisa...">
+            <select id="content-type">
+                <option value="all">Todos os Tipos</option>
+                <option value="news">Notícias</option>
+                <option value="reviews">Avaliações</option>
+                <option value="trends">Tendências</option>
+            </select>
+            <button id="search-button">Buscar</button>
+        </div>
+
         <!-- Seção de notícias -->
         <section id="noticias">
             <h2>Notícias</h2>
-            <article>
+            <article class="content-item" data-tipo="news">
                 <h3>Novo Carro Conceito Revelado</h3>
                 <p>Confira o emocionante novo carro conceito que promete revolucionar a indústria automobilística. <a href="noticia1.html">Leia Mais</a></p>
             </article>
-            <article>
+            <article class="content-item" data-tipo="news">
                 <h3>Vendas de Carros Elétricos Atingem Recorde</h3>
                 <p>As vendas de carros elétricos estão em ascensão. Saiba mais sobre essa tendência. <a href="noticia2.html">Leia Mais</a></p>
             </article>
@@ -36,11 +48,11 @@
         <!-- Seção de avaliações -->
         <section id="avaliacoes">
             <h2>Avaliações</h2>
-            <article>
+            <article class="content-item" data-tipo="reviews">
                 <h3>Review do Novo Modelo XZ1</h3>
                 <p>Uma análise detalhada do desempenho, design e recursos do novo Modelo XZ1. <a href="avaliacao1.html">Leia Mais</a></p>
             </article>
-            <article>
+            <article class="content-item" data-tipo="reviews">
                 <h3>Comparação de Sedãs de Luxo</h3>
                 <p>Veja como os sedãs de luxo mais populares se comparam em nossa análise especializada. <a href="avaliacao2.html">Leia Mais</a></p>
             </article>
@@ -49,11 +61,11 @@
         <!-- Seção de tendências -->
         <section id="tendencias">
             <h2>Tendências</h2>
-            <article>
+            <article class="content-item" data-tipo="trends">
                 <h3>Futuro dos Veículos Autônomos</h3>
                 <p>Descubra as últimas tendências e desenvolvimentos no campo dos veículos autônomos. <a href="tendencia1.html">Leia Mais</a></p>
             </article>
-            <article>
+            <article class="content-item" data-tipo="trends">
                 <h3>Carros Híbridos em Ascensão</h3>
                 <p>Saiba como os carros híbridos estão ganhando popularidade no mercado automotivo. <a href="tendencia2.html">Leia Mais</a></p>
             </article>
@@ -63,6 +75,6 @@
     <footer>
         <p>&copy; 2023 CarroVerso - Todos os direitos reservados</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
